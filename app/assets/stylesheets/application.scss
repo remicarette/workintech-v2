@@ -1,0 +1,119 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'animate';
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+
+.fh-100 {
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  min-height: calc(100vh - 56px);
+  background-color: #f8da7b;
+}
+
+.fh-90 {
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  min-height: calc(90vh - 56px);
+  border-radius: 0 0 0px 20px;
+  top: -46px;
+  box-shadow: -8px 8px 0 $white;
+}
+
+.top-bg {
+  background-image: asset-url("top-banner.svg");
+  position: absolute;
+  width: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  top: 56px;
+  height: auto;
+}
+
+.bg-left {
+  background-image: asset-url("city-bg.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 720px) {
+  .bg-left {
+    display: none !important;
+  }
+}
+
+.bg-right {
+  background-color: white;
+  align-items: center;
+}
+
+.display-right {
+  width: 80%;
+}
+
+.bg-city {
+  background-image: asset-url("city-bg.svg");
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.bg-lightgray {
+  background-color: $lightgray;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+.bg-yellow-game {
+  background-color: rgba(255, 188, 0, 0.4);
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-darkblue {
+  background-color: $darkblue;
+}
+
+.bg-lightblue {
+
+  background-color: $lightblue;
+}
+
+.bg-yellow-light {
+  background-color: $yellow-light;
+}
+
+.margin-title {
+  margin-top: 100px;
+}

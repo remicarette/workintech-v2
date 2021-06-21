@@ -1,0 +1,25 @@
+<div class="fh-100 bg-city bg-red">
+
+  <div class="container">
+  <div class="m-h1">
+    <h1 class="h1-ig">Découverte des métiers</h1>
+  </div>
+
+  <div class="row">
+    <% @jobs.each do |job| %>
+      <div class="col-12 col-md-6">
+        <%= link_to job_path(job) do%>
+          <div class="card-jobs my-3">
+            <div class="content">
+              <h2><%= job.name %> <%= image_tag job.job_type, alt: "alttext" %></h2>
+              <%= job.short_description %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+</div>

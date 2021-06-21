@@ -1,0 +1,249 @@
+.big-card {
+  background:  $white;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom:10px;
+  height: 140px;
+}
+
+.big-card h2, .card-done h2 {
+  font-size: 22px !important;
+}
+
+.card-done {
+  background: radial-gradient(ellipse farthest-corner at right bottom, #ffce45 0%, #ffbc00 28%, transparent 50%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #ffe08b -2%, #ffcd41 25%, #f5b923 72.5%);
+  color: $blue;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom:10px;
+  height: 140px;
+}
+
+.card-locked {
+  background-color: rgba(255,255,255,0.6);
+  color:$lightblue;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom:10px;
+  height: 140px;
+}
+
+
+.check {
+  font-size: 50px;
+  color: $blue;
+
+}
+
+.big-card:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.small-card {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container-job {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row-jobs{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+
+}
+
+
+.card-jobs {
+  background:    $white;
+  box-shadow:    0px 0px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding:       20px;
+  min-height: 241px;
+}
+
+
+.card-job-show {
+  position: left;
+  letter-spacing: 1px;
+  font-size: 20px;
+  margin:0 auto;
+  margin-top:50px;
+  color: white;
+}
+
+.presentation-job{
+  grid-column:1;
+  text-align: center;
+}
+
+.margin-card {
+  margin-bottom: 20px;
+}
+
+.card-dragon {
+  font-family: "VT323", monospace;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 30px;
+  font-size: 22px;
+  line-height: 1;
+  z-index: 10;
+  width: 95%;
+  box-shadow:
+    /* Inner Background Color */
+      0   -6px 0  -2px $white,
+      0    6px 0  -2px $white,
+      0  -12px 0  -4px $white,
+      0   12px 0  -4px $white,
+      0  -18px 0  -8px $white,
+      0   18px 0  -8px $white,
+      0  -24px 0 -12px $white,
+      0   24px 0 -12px $white,
+    /* Inner Border */
+     -2px  0   0   0   $black,
+      2px  0   0   0   $black,
+      0   -4px 0   0   $black,
+      0    4px 0   0   $black,
+      0  -10px 0  -2px $black,
+      0   10px 0  -2px $black,
+      0  -14px 0  -4px $black,
+      0   14px 0  -4px $black,
+      0  -20px 0  -8px $black,
+      0   20px 0  -8px $black,
+      0  -26px 0 -12px $black,
+      0   26px 0 -12px $black,
+    /* Middle Border */
+     -4px  0   0   0   $yellow,
+      4px  0   0   0   $yellow,
+      0   -2px 0   2px $yellow,
+      0    2px 0   2px $yellow,
+      0   -8px 0   0px $yellow,
+      0    8px 0   0px $yellow,
+      0  -12px 0  -2px $yellow,
+      0   12px 0  -2px $yellow,
+      0  -16px 0  -4px $yellow,
+      0   16px 0  -4px $yellow,
+      0  -22px 0  -8px $yellow,
+      0   22px 0  -8px $yellow,
+      0  -28px 0 -12px $yellow,
+      0   28px 0 -12px $yellow,
+    /* Outer Border */
+     -6px  0   0   0   $black,
+      6px  0   0   0   $black,
+      0    0   0   4px $black,
+      0   -6px 0   2px $black,
+      0    6px 0   2px $black,
+      0  -10px 0   0   $black,
+      0   10px 0   0   $black,
+      0  -14px 0  -2px $black,
+      0   14px 0  -2px $black,
+      0  -18px 0  -4px $black,
+      0   18px 0  -4px $black,
+      0  -24px 0  -8px $black,
+      0   24px 0  -8px $black,
+      0  -30px 0 -12px $black,
+      0   30px 0 -12px $black;
+}
+
+.game-desc {
+  font-weight: 600;
+  font-size: 16px;
+  background: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 10;
+  margin-bottom:10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border:2px $yellow solid;
+}
+
+
+
+.card-jobs img {
+    vertical-align: middle;
+    border-style: none;
+    width: 80px;
+    padding: 10px;
+}
+
+.mini-card{
+  background-color: white;
+  border-radius:  0 10px 10px;
+  border: 2px solid $yellow;
+  box-shadow: 7px 7px 0 rgb(255, 188, 0);
+  padding: 10px;
+  min-height: 200px;
+  margin-bottom: 20px;
+  color: black;
+  padding-top: 130px;
+  z-index: -10;
+  margin-top: -56px;
+  position: fixed;
+  right: 50px;
+  width:250px;
+}
+
+@media screen and (max-width: 480px) {
+  .mini-card {
+  display: none;
+  }
+}
+
+.mini-card h3 {
+  font-size:20px;
+  border-radius:10px;
+  color: black;
+  padding:15px;
+}
+
+.card-job-show h2 {
+  color: black;
+}
+
+.mini-card li {
+  font-size:14px;
+  list-style-type: none;
+}
+
+.mini-card ul {
+  padding:10px;
+}
+
+
+.mini-card .far, .fas {
+  color: $yellow;
+}

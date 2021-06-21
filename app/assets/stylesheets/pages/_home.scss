@@ -1,0 +1,81 @@
+// Specific CSS for your home-page
+.home-container {
+  height: calc(100vh - 56px);
+  position: relative;
+  display:flex;
+  align-items:center;
+}
+
+.catchphrase {
+  margin: 0 0 300px 5%;
+  width: 600px;
+}
+
+.bridge {
+  position:absolute;
+  bottom: 0px;
+  right: 0px;
+  background-image: asset-url("bridge.svg");
+  height: 596px;
+  width: 992px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 480px) {
+  .bridge {
+    height: 416px;
+    width: 642px;
+    top: 340px;
+  }
+  .home-container {
+  height: 100%;
+  position: relative;
+  display:flex;
+  align-items: flex-start;
+  margin-top:30px;
+}
+.catchphrase {
+  margin: 0;
+  margin-top:20px;
+}
+}
+
+@media only screen
+    and (device-width : 375px)
+    and (device-height : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+  .bridge {
+    height: 486px;
+    width: 642px;
+    top: 340px;
+  }
+
+}
+
+.rainbow-text {
+    background-image: repeating-linear-gradient(45deg, $darkblue, $lightblue, $yellow, $red, $yellow, $lightblue);
+    text-align: center;
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+    animation: rainbow 4s ease infinite;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+@keyframes rainbow {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 25%}
+    100%{background-position:0% 50%}
+}
+
+.h1-home {
+  font-size: 50px;
+}
+
+.animated {
+  animation-duration: 2s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+}

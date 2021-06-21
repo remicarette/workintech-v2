@@ -1,0 +1,53 @@
+<div class="fh-100 bg-city bg-yellow">
+  <div class="ellipse-quizz"></div>
+<div class="container form-container">
+
+<div class="h1-heart form-post-h1">
+
+  <h1><%= image_tag "heart.svg", alt: "heart" %> Test de personnalité</h1>
+</div>
+<div class="progress">
+  <div id= "progressbar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= @progressbar %>% ; background-color: #57AFFF"></div>
+</div>
+
+<div class="form-post">
+
+<%= @question.description %>
+
+<%= simple_form_for [@form, @answer] do |f| %>
+<!-- SI LA RÉPONSE INCLUT UNE IMAGE DANS LA DB -->
+<% if @question.answer_1.include?("svg") %>
+  <!-- JE DÉFINIS LES IMAGES -->
+  <% img1 = image_tag "#{@question.answer_1}", alt: "profile" %>
+  <% img2 = image_tag "#{@question.answer_2}", alt: "profile" %>
+  <!-- PUIS JE LES METS EN ANSWER -->
+
+  <%= f.input :points, as: :radio_buttons, label: "", collection: [["#{@question.value_1}", img1], ["#{@question.value_2}", img2]], label_method: :second, value_method: :first %>
+  <%= f.input :question_id, label: false, input_html: { value:"#{@question.id}", class: "d-none"} %>
+   <%= f.submit "Valider", class: "button-red", id: "submit-question" %>
+
+   <% if @boy_or_girl.count > 0 %>
+    <% cookies[:boy_or_girl] = @boy_or_girl.last.points %>
+   <% end %>
+
+  <% elsif @question.description.include?("prénom") %>
+    <%= f.input :points, label: false %>
+    <%= f.input :question_id, label: false, id: "firstname", input_html: { value:"#{@question.id}", class: "d-none"} %>
+    <%= f.submit :valider, class: "button-red", value: "Valider" %>
+
+
+  <% else %>
+  <div class="container">
+    <div class="select-button">
+      <% cookies[:firstname] = @firstname %>
+      <%= f.input :points, as: :radio_buttons, label: "", collection: [["#{@question.value_1}", "#{@question.answer_1}"], ["#{@question.value_2}", "#{@question.answer_2}"]], label_method: :second, id: "select-button", value_method: :first%>
+    </div>
+    <%= f.input :question_id, label: false, input_html: { value:"#{@question.id}", class: "d-none"} %>
+  </div>
+ <%= f.submit "Valider", class: "button-red", id: "submit-question" %>
+  <% end %>
+<% end %>
+  </div>
+
+</div>
+</div></div>

@@ -1,0 +1,75 @@
+<div class="fh-100 bg-city bg-blue">
+
+  <div class="container game-index">
+
+    <div class="m-h1">
+      <h1 class="h1-ig">Joue et découvre le code</h1>
+    </div>
+
+    <div class="fh">
+      <div class="row">
+
+
+        <% @games_sorted.each do |game| %>
+
+
+          <% if game.name == "Netflix" %>
+
+          <%= link_to netflix_path do  %>
+                <div class="col-12 margin-card">
+                  <% if cookies["#{game.id}"] == game.name %>
+                    <div class="card-done">
+                    <div class="check"><i class="fas fa-check-circle"></i></div>
+                  <% else %>
+                    <div class="big-card">
+                    <div class="game-logo"><%= image_tag game.logo, alt: "logo" %></div>
+                  <% end %>
+                  <div class="flex-grow-1 ml-3">
+                      <h2>
+                        <%= game.name %>
+                        <% game.difficulty.times do %>
+                        <%= image_tag "skull.svg", alt: "difficulty", class: "difficulty" %>
+                        <% end %>
+                      </h2>
+                      <div class="content">
+                        <%= game.short_description %>
+                      </div>
+                      </div>
+                    </div>
+                <% end %>
+
+          <% else %>
+
+                <%= link_to game_path(game) do  %>
+                <div class="col-12 margin-card">
+                  <% if cookies["#{game.id}"] == game.name %>
+                    <div class="card-done">
+                    <div class="check"><i class="fas fa-check-circle"></i></div>
+                  <% else %>
+                    <div class="big-card">
+                    <div class="game-logo"><%= image_tag game.logo, alt: "logo" %></div>
+                  <% end %>
+                  <div class="flex-grow-1 ml-3">
+                      <h2>
+                        <%= game.name %>
+                        <% game.difficulty.times do %>
+                        <%= image_tag "skull.svg", alt: "difficulty", class: "difficulty" %>
+                        <% end %>
+                      </h2>
+                      <div class="content">
+                        <%= game.short_description %>
+                      </div>
+                      </div>
+                    </div>
+                <% end %>
+
+
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

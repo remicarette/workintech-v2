@@ -1,0 +1,92 @@
+<div class="game-mobile bg-yellow">
+
+  <%= image_tag "boy-phone.svg", alt: "boy phone" %>
+  Désolé, nos jeux ne fonctionnent pas (encore) sur mobile. Prends ton Mac, ton PC, ou ta tablette en mode paysage !
+  <%= link_to "Retour à l'accueil", root_path, class: "button-white"  %>
+
+
+</div>
+
+<div class="game">
+
+
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6 game-padding">
+          <h1><span class="logo"> <%= image_tag @game.logo %></span> <%= @game.name %> </h1>
+
+          <p><%= @game.concept.html_safe %></p>
+          <div id="sublime", class="sublime-grid-container">
+
+            <%= form_for("", id: "testform", method: :patch ) do |f| %>
+              <div class="sublime-item-1">1</div>
+              <div id= "gamename" class="sublime-item-2" > <%= @game.name %> {</div>
+              <div class="sublime-item-3">2</div>
+              <div class="sublime-item-4">
+                <%= @game.variable1 %> = <%= f.select :variable1, collection: ["1", "2", "3"] %>
+              </div>
+              <div class="sublime-item-5">3</div>
+              <div class="sublime-item-6">
+                <% if @game.variable2.present? %>
+                  <%= @game.variable2 %> = <%= f.select :variable2, collection: ["red", "blue", "green" ] %>
+                <% end %>
+              </div>
+              <div class="sublime-item-7">4</div>
+              <div class="sublime-item-8">
+                <% if @game.variable3.present? %>
+                  <%= @game.variable3%>= <%= f.select :variable3, collection: ["10", "20", "30"] %>
+                <% end %>
+              </div>
+              <div class="sublime-item-9">5</div>
+              <div class="sublime-item-10"></div>
+              <div class="sublime-item-11">6</div>
+              <div class="sublime-item-12"></div>
+              <div class="sublime-item-13">7</div>
+              <div class="sublime-item-14">}</div>
+
+          </div> <%= f.submit :Valider, id: "btngame",  class: 'button-red mt-3', style: "display:none;"%>
+
+            <% end %>
+        </div>
+
+        <div class="col-12 col-md-6 fh-90 bg-lightgray align-items-center game-padding">
+             <% if @game.name.include?("Dragon") %>
+          <div class="card-dragon"><%= @game.description %></div>
+          <% elsif @game.name.include?("Trump") %>
+          <div class="game-desc"><%= @game.description %></div>
+          <% elsif @game.name.include?("Netflix") %>
+          <div class="card-netflix"><%= @game.description %></div>
+          <% end %>
+          <div class="game-view">
+          <div class="mountain">
+            <div id= "victory", style= "display: none ">
+            <%= image_tag "win.svg"%>
+            </div>
+            <div id= "deaddragon", style= "display: none; ">
+              <%= image_tag "dragonmort.svg"%>
+            </div>
+            <% if @game.name.include?("Trump") %>
+              <%= image_tag @game.background_image, alt: "vignette", id: "gameview"  %>
+            <% else %>
+              <%= image_tag @game.background_image, alt: "vignette" %>
+            <% end %>
+            <div id="style-variable1" class="hero", style = "position: absolute ; bottom: 23%">
+              <%= image_tag @game.action_image, alt: "vignette", style: "width: 80%" %>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<% if @game.name == "Dragon Quest" && cookies[:onboarding].nil? %>
+  <%= render "onboarding" %>
+  <% cookies[:onboarding] = "ok" %>
+<% end %>
+</div>

@@ -1,0 +1,31 @@
+<div class="fh-100">
+<div class="container-fluid">
+  <div class="row align-items-center">
+
+
+  <div class="col-12 col-md-6 d-flex justify-content-around bg-left bg-blue fh-100">
+    <div class="char-trophee">
+    <%= image_tag "boy-back.svg", alt: "alttext", class: "character" %>
+    <%= image_tag "trophee.svg", alt: "trophee", class: "trophee" %>
+    <%= image_tag "glasses.svg", alt: "glasses", class: "glasses" %>
+    </div>
+
+    </div>
+    <div class="col-12 col-md-6 fh-100 bg-right">
+  <div class="display-right">
+        <h1>Bravo !</h1>
+      <h2>Tu as réussi l'exercice " Netflix " </h2>
+      <p>Continue à jouer pour en apprendre plus sur le métier de développeur.</p>
+      <div class="buttons">
+        <%= link_to "🎮 Nouveau jeu", games_path, class: "button-red" %>
+        <%= link_to "Fiche métier", jobs_path, class: "button-red-2" %>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+</div>
+</div>
+
+<%= audio_tag "glasses.mp3", class: "audio-play" %>
